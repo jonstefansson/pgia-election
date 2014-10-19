@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Election</h2>
+
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>Votes</th>
+          <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @candidates.each do |candidate| %>
+        <tr>
+          <td><%= candidate.name %></td>
+          <td><%= candidate.votes %></td>
+          <td><button class="btn btn-success active">Vote</button></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Candidates', candidates_path, class: "btn btn-link", role: "button" %>
+</div>

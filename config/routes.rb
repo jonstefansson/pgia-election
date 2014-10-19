@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'candidates#index'
 
   resources :candidates
+
+  get '/election' => 'elections#index', as: :elections_index
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
