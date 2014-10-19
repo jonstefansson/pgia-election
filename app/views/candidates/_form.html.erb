@@ -1,0 +1,25 @@
+<%= form_for(@candidate, html: {role: 'form'}) do |f| %>
+  <% if @candidate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+
+      <ul>
+      <% @candidate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ballot_position %><br>
+    <%= f.number_field :ballot_position %>
+  </div>
+  <div class="actions">
+    <%= f.button class: "btn btn-primary" %>
+  </div>
+<% end %>
